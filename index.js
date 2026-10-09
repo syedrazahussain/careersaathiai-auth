@@ -17,6 +17,14 @@ app.get('/',(req,res)=>{
     res.send("hello from auth service");
 })
 
+
+app.get("/health", (_req, res) => {
+    res.status(200).json({
+        status: "ok",
+        service: "auth",
+    });
+});
+
 app.use("/",authRouter)
 
 
